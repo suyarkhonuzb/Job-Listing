@@ -1,7 +1,9 @@
 /* GLOBAL */
 :root{
     --body-bg:#effafa;
-    --text-color:#5ca5a5;
+    --green-color:#5ca5a5;
+    --black-color:#2b3939;
+    --gray-color:#7c8f8f;
 }
 
 html{
@@ -16,9 +18,9 @@ body{
     flex-direction: column;
     margin: 0;
     padding: 0;
-    font-size: 16px;
-    line-height: 1.5;
     font-family: 'League Spartan', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
 }
 
 *, *::before, *::after{
@@ -35,6 +37,28 @@ body{
     margin-left: auto;
 }
 
+/* VISUALLY-HIDDEN */
+.visually-hidden { 
+    /* Contain text within 1px box */
+    height: 1px; 
+    overflow: hidden;
+    width: 1px;
+    /* Keep the layout */  
+    position: absolute;
+    /* Remove any visible trace (e.g. background color) */
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%); /* browsers in the future */
+    /* Prevent the screen reader to skip spaces between words */
+    white-space: nowrap;
+  }
+
 .main-content{
     flex-grow: 1;
+}
+
+.site-header{
+    height: 156px;
+    background-image: url(../img/Combined\ Shape.png);
+    background-position: center center;
 }
