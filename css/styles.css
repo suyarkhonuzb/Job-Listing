@@ -75,7 +75,6 @@ body{
 }
 
 .listings {
-    display: flex;
     padding: 0;
     margin: 0;
 }
@@ -83,10 +82,25 @@ body{
 .listing-item {
     display: flex;
     align-items: center;
+    margin-bottom: 24px;
     padding: 32px 40px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+}
+
+.listing-item:last-child{
+    margin-bottom: 0;   
+}
+
+.featured{
+    border-left: 5px solid transparent;
+    transition: border-radius 0.4s ease;
+}
+
+.featured:hover{
+    border-left: 5px solid var(--green-color);
+    border-radius: 100px 0px 0px 100px;
 }
 
 .job-listings-logo {
@@ -167,23 +181,33 @@ body{
     align-items: center;
 }
 
-.job-listing-addl-item:not(:last-child){
-    margin-right: 16px;
-}
-
 .job-listing-addl-item{
+    display: inline-flex;
+    align-items: center;
     font-weight: 500;
     color: var(--gray-color);
+    white-space: nowrap;
+}
+
+.job-listing-addl-item:not(:first-child)::before{
+    content: "";
+    width: 4px;
+    height: 4px;
+    margin-left: 16px;
+    margin-right: 16px;
+    background-image: url(../img/Oval\ Copy.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .job-listings-tags {
     display: flex;
-    flex-grow: 1;
+    margin-right: 0;
     list-style: none;
+    white-space: nowrap;
 }
 
 .job-listings-tag-item:not(:last-child){
-
     margin-right: 16px;
 
 }
